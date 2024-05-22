@@ -39,7 +39,7 @@ if uploaded_file is not None:
     val = val.iloc[:, 2:]
     val.columns = ['label', 'data']
     X_val = val["data"]
-    X_text=[preprocess_text(text) for text in X_val]
+    X_test=[preprocess_text(text) for text in X_val]
     X_test_vect = vectorizer.transform(X_test)
     predictions = classifier.predict(X_test_vect)  # adjust the column name
     val['predictions'] = predictions
